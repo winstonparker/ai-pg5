@@ -194,7 +194,32 @@ class AsynchronousValueIterationAgent(ValueIterationAgent):
         ValueIterationAgent.__init__(self, mdp, discount, iterations)
 
     def runValueIteration(self):
-        "*** YOUR CODE HERE ***"
+        if self.iterations == 0:
+            return
+
+        newVals = util.Counter() # A Counter is a dict with default 0
+
+        for state in self.mdp.getStates():
+            totalMax = -1*sys.maxint
+            for action in self.mdp.getPossibleActions(state):
+                totalTrans = 0
+                for transitions in self.mdp.getTransitionStatesAndProbs(state, action):
+                    nextState, prob = transitions
+                    reward = self.mdp.getReward(state, action, nextState)
+                    val = self.getValue(nextState)
+                    if self.mdp.isTerminal(state):
+                        val = 0
+                    totalTrans += prob * (reward + self.discount * val)
+
+                if totalTrans > totalMax:
+                    totalMax = totalTrans
+            if totalMax == -1*sys.maxint:
+                totalMax = 0
+            newVals[state] = totalMax
+
+        self.values = newVals
+
+       
 
 class PrioritizedSweepingValueIterationAgent(AsynchronousValueIterationAgent):
     """

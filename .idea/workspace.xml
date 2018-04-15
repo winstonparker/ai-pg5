@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="3ba4550b-5892-43d6-ad75-7dd153eeebcc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/analysis.py" afterPath="$PROJECT_DIR$/analysis.py" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q4/1-tinygrid.test_output" afterPath="$PROJECT_DIR$/test_cases/q4/1-tinygrid.test_output" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q4/2-tinygrid-noisy.test_output" afterPath="$PROJECT_DIR$/test_cases/q4/2-tinygrid-noisy.test_output" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q4/3-bridge.test_output" afterPath="$PROJECT_DIR$/test_cases/q4/3-bridge.test_output" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q4/4-discountgrid.test_output" afterPath="$PROJECT_DIR$/test_cases/q4/4-discountgrid.test_output" />
+      <change beforePath="$PROJECT_DIR$/valueIterationAgents.py" afterPath="$PROJECT_DIR$/valueIterationAgents.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="valueIterationAgents.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="valueIterationAgents.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/valueIterationAgents.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-272">
-              <caret line="133" column="49" lean-forward="false" selection-start-line="133" selection-start-column="49" selection-end-line="133" selection-end-column="49" />
+            <state relative-caret-position="554">
+              <caret line="221" column="7" lean-forward="false" selection-start-line="221" selection-start-column="7" selection-end-line="221" selection-end-column="7" />
               <folding>
                 <element signature="e#1354#1364#0" expanded="true" />
               </folding>
@@ -36,7 +40,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="analysis.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="learningAgents.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/learningAgents.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3422">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="analysis.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/analysis.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="277">
@@ -54,8 +68,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/valueIterationAgents.py" />
         <option value="$PROJECT_DIR$/analysis.py" />
+        <option value="$PROJECT_DIR$/valueIterationAgents.py" />
       </list>
     </option>
   </component>
@@ -168,6 +182,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.121916845" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -276,21 +291,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/valueIterationAgents.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-272">
-          <caret line="133" column="49" lean-forward="false" selection-start-line="133" selection-start-column="49" selection-end-line="133" selection-end-column="49" />
-          <folding>
-            <element signature="e#1354#1364#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/analysis.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
           <caret line="50" column="26" lean-forward="false" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learningAgents.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3422">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/valueIterationAgents.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="221" column="7" lean-forward="false" selection-start-line="221" selection-start-column="7" selection-end-line="221" selection-end-column="7" />
+          <folding>
+            <element signature="e#1354#1364#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
