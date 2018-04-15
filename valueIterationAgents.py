@@ -205,7 +205,7 @@ class AsynchronousValueIterationAgent(ValueIterationAgent):
                 index = i
             else:
                 index = i % len(self.mdp.getStates())
-                
+
             state = self.mdp.getStates()[index]
 
             if self.mdp.isTerminal(state):
