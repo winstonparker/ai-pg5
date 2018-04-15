@@ -197,9 +197,21 @@ class AsynchronousValueIterationAgent(ValueIterationAgent):
         if self.iterations == 0:
             return
 
-        newVals = util.Counter() # A Counter is a dict with default 0
+        for i in range(0, self.iterations):
 
-        for state in self.mdp.getStates():
+
+            index = 0
+            if i < len(self.mdp.getStates()):
+                index = i
+            else:
+                index = i % len(self.mdp.getStates())
+                
+            state = self.mdp.getStates()[index]
+
+            if self.mdp.isTerminal(state):
+                self.values[state] = 0
+                continue
+
             totalMax = -1*sys.maxint
             for action in self.mdp.getPossibleActions(state):
                 totalTrans = 0
@@ -215,11 +227,10 @@ class AsynchronousValueIterationAgent(ValueIterationAgent):
                     totalMax = totalTrans
             if totalMax == -1*sys.maxint:
                 totalMax = 0
-            newVals[state] = totalMax
 
-        self.values = newVals
+            self.values[state] = totalMax
 
-       
+
 
 class PrioritizedSweepingValueIterationAgent(AsynchronousValueIterationAgent):
     """
