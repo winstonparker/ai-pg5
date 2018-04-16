@@ -4,7 +4,7 @@
 # educational purposes provided that (1) you do not distribute or publish
 # solutions, (2) you retain this notice, and (3) you provide clear
 # attribution to UC Berkeley, including a link to http://ai.berkeley.edu.
-# 
+#
 # Attribution Information: The Pacman AI projects were developed at UC Berkeley.
 # The core projects and autograders were primarily created by John DeNero
 # (denero@cs.berkeley.edu) and Dan Klein (klein@cs.berkeley.edu).
@@ -43,6 +43,7 @@ class QLearningAgent(ReinforcementAgent):
         ReinforcementAgent.__init__(self, **args)
 
         "*** YOUR CODE HERE ***"
+        self.qValues = util.Counter()
 
     def getQValue(self, state, action):
         """
@@ -51,8 +52,7 @@ class QLearningAgent(ReinforcementAgent):
           or the Q node value otherwise
         """
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
-
+        return self.qValues[(state, action)]
 
     def computeValueFromQValues(self, state):
         """
@@ -62,7 +62,15 @@ class QLearningAgent(ReinforcementAgent):
           terminal state, you should return a value of 0.0.
         """
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        max = -999999
+        for action in self.getLegalActions(state):
+            val = self.getQValue(state, action)
+            if val > max:
+                max = val
+        if max == -999999:
+            return 0.0
+        else:
+            return max
 
     def computeActionFromQValues(self, state):
         """
@@ -71,7 +79,15 @@ class QLearningAgent(ReinforcementAgent):
           you should return None.
         """
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        max = -999999
+        bestAction = None
+        for action in self.getLegalActions(state):
+            val = self.getQValue(state, action)
+            if val > max:
+                max = val
+                bestAction = action
+        return bestAction
+
 
     def getAction(self, state):
         """
@@ -85,12 +101,17 @@ class QLearningAgent(ReinforcementAgent):
           HINT: To pick randomly from a list, use random.choice(list)
         """
         # Pick Action
-        legalActions = self.getLegalActions(state)
         action = None
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        action = None
+        flip = util.flipCoin(self.epsilon)
+        if flip == True:
+            action = random.choice(self.getLegalActions(state))
+        else:
+            action = self.computeActionFromQValues(state)
 
         return action
+
 
     def update(self, state, action, nextState, reward):
         """
@@ -102,7 +123,11 @@ class QLearningAgent(ReinforcementAgent):
           it will be called on your behalf
         """
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        tempVal = self.qValues[(state, action)]
+        val = reward + self.discount * self.computeValueFromQValues(nextState)
+        new = (1 - self.alpha) * tempVal + self.alpha * val
+
+        self.qValues[(state, action)] = new
 
     def getPolicy(self, state):
         return self.computeActionFromQValues(state)
