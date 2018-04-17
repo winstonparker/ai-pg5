@@ -67,8 +67,9 @@ class QLearningAgent(ReinforcementAgent):
             val = self.getQValue(state, action)
             if val > max:
                 max = val
+
         if max == -999999:
-            return 0.0
+            return 0
         else:
             return max
 
